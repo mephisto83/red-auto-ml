@@ -38,10 +38,11 @@ DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
 PATH_TO_FROZEN_GRAPH = MODEL_NAME + '/frozen_inference_graph.pb'
-PATH_TO_MODEL_DIR = "~/dev/tensorflow/models/research/object_detection"
+PATH_TO_MODEL_DIR = "/home/andrewp/dev/tensorflow/models/research/object_detection"
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = os.path.join(PATH_TO_MODEL_DIR, 'data', 'mscoco_label_map.pbtxt')
-
+print("PATH_TO_LABELS")
+print(PATH_TO_LABELS)
 print("downloading model")
 opener = urllib.request.URLopener()
 opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
@@ -76,7 +77,7 @@ print("Detection")
 # image1.jpg
 # image2.jpg
 # If you want to test the code with your images, just add path to the images to the TEST_IMAGE_PATHS.
-PATH_TO_TEST_IMAGES_DIR = '~/dev/tensorflow/models/research/object_detection/test_images'
+PATH_TO_TEST_IMAGES_DIR = '/home/andrewp/dev/tensorflow/models/research/object_detection/test_images'
 TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.jpg'.format(i)) for i in range(1, 3) ]
 
 # Size, in inches, of the output images.
